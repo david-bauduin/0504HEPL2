@@ -14,7 +14,6 @@ require_once(__DIR__ . '/src/functions.php');
 </head>
 
 <body>
-
     <?php require_once(__DIR__ . '/src/partials/header.php'); ?>
 
     <div id="corps">

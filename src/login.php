@@ -40,5 +40,6 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     <div>
         <p>Utilisateur Connecté</p>
         <p><?php echo $_SESSION['full_name']; ?></p>
+        <a href="src/logout.php">Déconnexion</a>
     </div>
 <?php endif; ?>
