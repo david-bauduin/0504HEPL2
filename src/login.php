@@ -10,7 +10,6 @@ try {
     // echo $e->getMessage();
     echo 'Il y a un problème avec la base de données';
 }
-
 if (isset($_POST['email']) && isset($_POST['password'])) {
     $sql = 'SELECT * FROM users where email=:email AND password=:password LIMIT 1';
     $request = $client->prepare($sql);
@@ -27,6 +26,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         echo 'mauvais login/password';
     }
 }
+
 
 //step 1
 //afficher un formulaire
