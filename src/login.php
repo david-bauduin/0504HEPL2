@@ -11,23 +11,19 @@ try {
     echo 'Il y a un problème avec la base de données';
 }
 
-$sql = 'SELECT * FROM users';
-$request = $client->prepare($sql);
-$request->execute();
-$users = $request->fetchAll();
-
-
 if (isset($_POST['email']) && isset($_POST['password'])) {
-    foreach ($users as $user) {
-        if (
-            $user['email'] === $_POST['email'] &&
-            $user['password'] === $_POST['password']
-        ) {
-            $_SESSION['loggedUser'] = true;
-            $_SESSION['full_name'] = $user['full_name'];
-        }
-    }
-    if (!isset($_SESSION['loggedUser'])) {
+    $sql = 'SELECT * FROM users where email=:email AND password=:password LIMIT 1';
+    $request = $client->prepare($sql);
+    $request->execute([
+        'email' => $_POST['email'],
+        'password' => $_POST['password'],
+    ]);
+    $user = $request->fetch();
+    
+    if($user){
+        $_SESSION['loggedUser'] = true;
+        $_SESSION['full_name'] = $user['full_name'];
+    }else{
         echo 'mauvais login/password';
     }
 }
