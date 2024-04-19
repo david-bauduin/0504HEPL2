@@ -7,11 +7,12 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         'password' => $_POST['password'],
     ]);
     $user = $request->fetch();
-
     if ($user) {
         $_SESSION['loggedUser'] = true;
         $_SESSION['email'] = $user['email'];
         $_SESSION['full_name'] = $user['full_name'];
+        $_SESSION['user_id'] = $user['id'];
+        header("Location: index.php");
     } else {
         echo 'mauvais login/password';
     }
