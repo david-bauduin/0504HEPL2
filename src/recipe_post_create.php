@@ -33,8 +33,8 @@ if(
 $sql = 'INSERT INTO recipes(title, recipe, user_id, is_enabled) VALUES (:title, :recipe, :user_id, :is_enabled)';
 $request = $client->prepare($sql);
 $request->execute([
-    'title' => $_POST['title'],
-    'recipe' => $_POST['recipe'],
+    'title' => htmlspecialchars($_POST['title']),
+    'recipe' => htmlspecialchars($_POST['recipe']),
     'user_id' => $_SESSION['user_id'],
     'is_enabled' => 1,
 ]);
