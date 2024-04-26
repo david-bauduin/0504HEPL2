@@ -8,7 +8,7 @@ if (isset($_POST['full_name']) && isset($_POST['email']) && isset($_POST['passwo
         'password' => $_POST['password'],
         'age' => $_POST['age'],
     ]);
-    echo 'Inscription réussie';
+    header("Location: index.php");
 }
 
 ?>

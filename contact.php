@@ -18,8 +18,8 @@ session_start();
         <h1>Page de Contact</h1>
         <form>
             <div>
-                <label for="email">Email</label>
-                <input type="email" name="email">
+                <label for="content">Contenu</label>
+                <input type="text" name="content">
             </div>
             <button type="submit">Envoyer</button>
         </form>

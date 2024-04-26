@@ -7,6 +7,7 @@
             <?php if (isset($_SESSION['loggedUser'])) : ?>
                 <li><a class="nav-link" href="mylist.php">Ma liste de recettes</a></li>
                 <li><a class="nav-link" href="create.php">Créer une recette</a></li>
+                <li><a class="nav-link" href="search.php">Rechercher une recette en ligne</a></li>
                 <li>
                     <p><?php echo $_SESSION['full_name'];?></p>
                     <a class="nav-link" href="src/logout.php">Déconnexion</a>
