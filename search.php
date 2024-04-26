@@ -30,9 +30,9 @@ session_start();
                 echo "<p>" . $recipe['strInstructions'] . "</p>";
                 ?>
                 <form method="POST" action="src/recipe_post_create.php">
-                    <input type="text" name="title" value="<?php echo $recipe['strMeal']; ?>">
-                    <input type="text" name="recipe" value="<?php echo $recipe['strInstructions']; ?>">
-                    <input type="submit" value="Rechercher">
+                    <input type="hidden" name="title" value="<?php echo $recipe['strMeal']; ?>">
+                    <input type="hidden" name="recipe" value="<?php echo $recipe['strInstructions']; ?>">
+                    <input type="submit" value="LIKE">
                 </form>
                 <?php
             }
